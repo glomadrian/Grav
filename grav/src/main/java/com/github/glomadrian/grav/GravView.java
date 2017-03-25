@@ -12,7 +12,6 @@ import android.view.View;
 import com.github.glomadrian.grav.figures.Grav;
 import com.github.glomadrian.grav.generator.GeneratorFactory;
 import com.github.glomadrian.grav.generator.animation.GravAnimatorGenerator;
-import com.github.glomadrian.grav.generator.animation.HorizontalMoveAnimator;
 import com.github.glomadrian.grav.generator.grav.GravGenerator;
 import com.github.glomadrian.grav.generator.paint.PaintGenerator;
 import com.github.glomadrian.grav.generator.point.PointGenerator;
@@ -21,7 +20,7 @@ import java.util.Vector;
 public class GravView extends View {
   private PointGenerator pointGenerator;
   private PaintGenerator paintGenerator;
-  private GravAnimatorGenerator gravAnimatorGenerator;
+  private Vector<GravAnimatorGenerator> gravAnimatorGenerators;
   private GravGenerator gravGenerator;
   private Vector<Grav> gravVector;
   private Vector<ValueAnimator> gravAnimators;
@@ -51,12 +50,30 @@ public class GravView extends View {
         paintGenerator = generatorFactory.createPaint(attributes.getString(R.styleable.GravView_colorGenerator), attributes);
         pointGenerator = generatorFactory.createPoint(attributes.getString(R.styleable.GravView_pointGenerator), attributes);
         gravGenerator = generatorFactory.createGrav(attributes.getString(R.styleable.GravView_gravGenerator), attributes);
-        gravAnimatorGenerator =
-        generatorFactory.createAnimator(attributes.getString(R.styleable.GravView_animationGenerator), attributes);
+        gravAnimatorGenerators = obtainGravAnimators(attributes, generatorFactory);
       } finally {
         attributes.recycle();
       }
     }
+  }
+
+  private Vector<GravAnimatorGenerator> obtainGravAnimators(TypedArray attributes, GeneratorFactory generatorFactory) {
+    Vector<GravAnimatorGenerator> gravAnimatorGenerators = new Vector<>();
+    int arrayResourceId = attributes.getResourceId(R.styleable.GravView_animationGenerators, 0);
+    if (arrayResourceId != 0) {
+      String[] animationGeneratorsString = getContext().getResources().getStringArray(arrayResourceId);
+      for (String generatorString : animationGeneratorsString) {
+        GravAnimatorGenerator gravAnimatorGenerator = generatorFactory.createAnimator(generatorString, attributes);
+        if (gravAnimatorGenerator != null) {
+          gravAnimatorGenerators.add(gravAnimatorGenerator);
+        }
+      }
+    } else {
+      GravAnimatorGenerator gravAnimatorGenerator =
+      generatorFactory.createAnimator(attributes.getString(R.styleable.GravView_animationGenerator), attributes);
+      gravAnimatorGenerators.add(gravAnimatorGenerator);
+    }
+    return gravAnimatorGenerators;
   }
 
   private void initializeRefreshAnimator() {
@@ -91,8 +108,10 @@ public class GravView extends View {
   private Vector<ValueAnimator> generateGravAnimatorsFrom(Vector<Grav> gravVector) {
     Vector<ValueAnimator> valueAnimators = new Vector<>(gravVector.size());
     for (Grav grav : gravVector) {
-      ValueAnimator valueAnimator = gravAnimatorGenerator.generateGravAnimator(grav, getWidth(), getHeight());
-      valueAnimators.add(valueAnimator);
+      for(GravAnimatorGenerator gravAnimatorGenerator : gravAnimatorGenerators) {
+        ValueAnimator valueAnimator = gravAnimatorGenerator.generateGravAnimator(grav, getWidth(), getHeight());
+        valueAnimators.add(valueAnimator);
+      }
     }
     return valueAnimators;
   }

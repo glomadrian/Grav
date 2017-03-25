@@ -2,6 +2,7 @@ package com.github.glomadrian.grav.generator;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.annotation.Nullable;
 import com.github.glomadrian.grav.generator.animation.GravAnimatorGenerator;
 import com.github.glomadrian.grav.generator.animation.HorizontalMoveAnimator;
 import com.github.glomadrian.grav.generator.grav.BallGravGenerator;
@@ -49,6 +50,16 @@ public class GeneratorFactory {
   public GravAnimatorGenerator createAnimator(String className, TypedArray attributeSet) {
     if (className == null || className.isEmpty()) {
       return new HorizontalMoveAnimator();
+    }
+    GravAnimatorGenerator generator = ClassUtil.getClassByName(className, GravAnimatorGenerator.class);
+    generator.configure(attributeSet, context);
+    return generator;
+  }
+
+  @Nullable
+  public GravAnimatorGenerator createAnimatorWithoutDefault(String className, TypedArray attributeSet) {
+    if (className == null || className.isEmpty()) {
+      return null;
     }
     GravAnimatorGenerator generator = ClassUtil.getClassByName(className, GravAnimatorGenerator.class);
     generator.configure(attributeSet, context);

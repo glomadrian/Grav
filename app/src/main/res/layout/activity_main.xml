@@ -20,8 +20,9 @@
       app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGravGenerator"
       app:size="3dp"
       app:animationGenerator="com.github.glomadrian.grav.generator.animation.GravBallSizeAnimation"
-      app:min_animation_time="2000"
-      app:max_animation_time="5800"
+      app:animationGenerators="@array/Animations"
+      app:min_animation_time="1000"
+      app:max_animation_time="2800"
       app:animation_variance="10dp"
       />
 

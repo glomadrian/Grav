@@ -13,4 +13,9 @@
     <item>#3288BD</item>
     <item>#5E4FA2</item>
   </string-array>
+
+  <string-array name="Animations">
+    <item>com.github.glomadrian.grav.generator.animation.GravBallSizeAnimation</item>
+    <item>com.github.glomadrian.grav.generator.animation.HorizontalEdgeAnimation</item>
+  </string-array>
 </resources>

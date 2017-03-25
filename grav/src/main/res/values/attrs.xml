@@ -5,6 +5,7 @@
     <attr name="pointGenerator" format="string" />
     <attr name="gravGenerator" format="string" />
     <attr name="animationGenerator" format="string" />
+    <attr name="animationGenerators" format="reference" />
     <attr name="grav_color" format="color" />
     <attr name="grav_colors" format="reference" />
     <attr name="cell_size" format="integer" />
