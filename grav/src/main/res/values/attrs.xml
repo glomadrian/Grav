@@ -2,5 +2,18 @@
 <resources>
   <declare-styleable name="GravView">
     <attr name="colorGenerator" format="string" />
+    <attr name="pointGenerator" format="string" />
+    <attr name="gravGenerator" format="string" />
+    <attr name="animationGenerator" format="string" />
+    <attr name="grav_color" format="color" />
+    <attr name="grav_colors" format="reference" />
+    <attr name="cell_size" format="integer" />
+    <attr name="variance" format="integer" />
+    <attr name="size" format="dimension" />
+    <attr name="width" format="dimension" />
+    <attr name="height" format="dimension" />
+    <attr name="min_animation_time" format="integer" />
+    <attr name="max_animation_time" format="integer" />
+    <attr name="animation_variance" format="dimension" />
   </declare-styleable>
 </resources>

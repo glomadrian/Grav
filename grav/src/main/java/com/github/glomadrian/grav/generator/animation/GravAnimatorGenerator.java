@@ -1,6 +1,8 @@
-package com.github.glomadrian.grav.generator.animator;
+package com.github.glomadrian.grav.generator.animation;
 
 import android.animation.ValueAnimator;
+import android.content.Context;
+import android.content.res.TypedArray;
 import com.github.glomadrian.grav.figures.Grav;
 
 public abstract class GravAnimatorGenerator<T extends Grav> {
@@ -14,6 +16,7 @@ public abstract class GravAnimatorGenerator<T extends Grav> {
 
   protected abstract ValueAnimator createValueAnimator(T grav);
   protected abstract UpdageGravListener<T> createUpdateListener();
+  public abstract void configure(TypedArray attributeSet, Context context);
 
   private class AnimatorUpdateListener implements ValueAnimator.AnimatorUpdateListener {
     private final T grav;

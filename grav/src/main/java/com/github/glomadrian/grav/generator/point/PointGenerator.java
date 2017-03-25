@@ -1,5 +1,7 @@
 package com.github.glomadrian.grav.generator.point;
 
+import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.PointF;
 import java.util.Vector;
 
@@ -9,7 +11,6 @@ import java.util.Vector;
  * @author manolovn
  */
 public interface PointGenerator {
-    Vector<PointF> generatePoints(int width, int height, int cellSize, int variance);
-    void setBleedX(int bleedX);
-    void setBleedY(int bleedY);
+    Vector<PointF> generatePoints(int width, int height);
+    void configure(TypedArray attributeSet, Context context);
 }

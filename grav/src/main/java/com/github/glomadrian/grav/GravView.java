@@ -11,15 +11,11 @@ import android.util.AttributeSet;
 import android.view.View;
 import com.github.glomadrian.grav.figures.Grav;
 import com.github.glomadrian.grav.generator.GeneratorFactory;
-import com.github.glomadrian.grav.generator.animator.GravAnimatorGenerator;
-import com.github.glomadrian.grav.generator.animator.PathMoveAnimator;
-import com.github.glomadrian.grav.generator.grav.BallGravGenerator;
+import com.github.glomadrian.grav.generator.animation.GravAnimatorGenerator;
+import com.github.glomadrian.grav.generator.animation.HorizontalMoveAnimator;
 import com.github.glomadrian.grav.generator.grav.GravGenerator;
-import com.github.glomadrian.grav.generator.paint.OneColorGenerator;
 import com.github.glomadrian.grav.generator.paint.PaintGenerator;
-import com.github.glomadrian.grav.generator.paint.RandomColorGenerator;
 import com.github.glomadrian.grav.generator.point.PointGenerator;
-import com.github.glomadrian.grav.generator.point.RegularPointGenerator;
 import java.util.Vector;
 
 public class GravView extends View {
@@ -47,15 +43,20 @@ public class GravView extends View {
   }
 
   private void initialize(AttributeSet attrs) {
-    GeneratorFactory generatorFactory = new GeneratorFactory();
+    GeneratorFactory generatorFactory = new GeneratorFactory(getContext());
     initializeRefreshAnimator();
     if (attrs != null) {
       TypedArray attributes = getContext().getTheme().obtainStyledAttributes(attrs, R.styleable.GravView, 0, 0);
-      paintGenerator = generatorFactory.create(attributes.getString(R.styleable.GravView_colorGenerator), attributes);
+      try {
+        paintGenerator = generatorFactory.createPaint(attributes.getString(R.styleable.GravView_colorGenerator), attributes);
+        pointGenerator = generatorFactory.createPoint(attributes.getString(R.styleable.GravView_pointGenerator), attributes);
+        gravGenerator = generatorFactory.createGrav(attributes.getString(R.styleable.GravView_gravGenerator), attributes);
+        gravAnimatorGenerator =
+        generatorFactory.createAnimator(attributes.getString(R.styleable.GravView_animationGenerator), attributes);
+      } finally {
+        attributes.recycle();
+      }
     }
-    pointGenerator = new RegularPointGenerator();
-    gravGenerator = new BallGravGenerator();
-    gravAnimatorGenerator = new PathMoveAnimator();
   }
 
   private void initializeRefreshAnimator() {
@@ -72,7 +73,7 @@ public class GravView extends View {
   @Override
   protected void onSizeChanged(int w, int h, int oldw, int oldh) {
     super.onSizeChanged(w, h, oldw, oldh);
-    Vector<PointF> points = pointGenerator.generatePoints(w, h, 300, 10);
+    Vector<PointF> points = pointGenerator.generatePoints(w, h);
     gravVector = generateBallFrom(points);
     gravAnimators = generateGravAnimatorsFrom(gravVector);
   }

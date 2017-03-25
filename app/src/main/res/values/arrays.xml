@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="Spectral">
+    <item>#9E0142</item>
+    <item>#D53E4F</item>
+    <item>#F46D43</item>
+    <item>#FDAE61</item>
+    <item>#FEE08B</item>
+    <item>#FFFFBF</item>
+    <item>#E6F598</item>
+    <item>#ABDDA4</item>
+    <item>#66C2A5</item>
+    <item>#3288BD</item>
+    <item>#5E4FA2</item>
+  </string-array>
+</resources>
