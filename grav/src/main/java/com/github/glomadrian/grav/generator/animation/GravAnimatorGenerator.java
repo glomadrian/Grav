@@ -7,14 +7,14 @@ import com.github.glomadrian.grav.figures.Grav;
 
 public abstract class GravAnimatorGenerator<T extends Grav> {
 
-  public ValueAnimator generateGravAnimator(T grav){
-    ValueAnimator valueAnimator =  createValueAnimator(grav);
+  public ValueAnimator generateGravAnimator(T grav, int width, int height){
+    ValueAnimator valueAnimator =  createValueAnimator(grav, width, height);
     UpdageGravListener<T> updageGravListenerListener = createUpdateListener();
     valueAnimator.addUpdateListener(new AnimatorUpdateListener(grav, updageGravListenerListener));
     return valueAnimator;
   }
 
-  protected abstract ValueAnimator createValueAnimator(T grav);
+  protected abstract ValueAnimator createValueAnimator(T grav, int width, int height);
   protected abstract UpdageGravListener<T> createUpdateListener();
   public abstract void configure(TypedArray attributeSet, Context context);
 

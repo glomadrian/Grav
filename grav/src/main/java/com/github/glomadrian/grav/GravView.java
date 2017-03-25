@@ -91,7 +91,7 @@ public class GravView extends View {
   private Vector<ValueAnimator> generateGravAnimatorsFrom(Vector<Grav> gravVector) {
     Vector<ValueAnimator> valueAnimators = new Vector<>(gravVector.size());
     for (Grav grav : gravVector) {
-      ValueAnimator valueAnimator = gravAnimatorGenerator.generateGravAnimator(grav);
+      ValueAnimator valueAnimator = gravAnimatorGenerator.generateGravAnimator(grav, getWidth(), getHeight());
       valueAnimators.add(valueAnimator);
     }
     return valueAnimators;

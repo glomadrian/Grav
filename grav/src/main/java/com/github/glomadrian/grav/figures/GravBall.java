@@ -5,7 +5,7 @@ import android.graphics.Paint;
 import android.graphics.PointF;
 
 public class GravBall extends Grav{
-  private final int radius;
+  private int radius;
 
   public GravBall(PointF startPoint, Paint paint,  int radius) {
     super(startPoint, paint);
@@ -14,5 +14,9 @@ public class GravBall extends Grav{
 
   public void draw(Canvas canvas, PointF drawPoint){
     canvas.drawCircle(drawPoint.x, drawPoint.y, radius, paint);
+  }
+
+  public void setRadius(int radius) {
+    this.radius = radius;
   }
 }

@@ -14,7 +14,7 @@ public class VerticalMoveAnimator extends GravAnimatorGenerator<Grav> {
   private long maxAnimationDuration = 3000;
 
   @Override
-  protected ValueAnimator createValueAnimator(Grav grav) {
+  protected ValueAnimator createValueAnimator(Grav grav, int width, int height) {
     PointF startPoint = grav.getStartPoint();
     ValueAnimator valueAnimator = ValueAnimator.ofFloat(startPoint.y - variance, startPoint.y + variance);
     valueAnimator.setDuration(getRandomDuration(minAnimationDuration, maxAnimationDuration));

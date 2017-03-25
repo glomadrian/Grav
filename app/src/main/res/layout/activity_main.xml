@@ -12,18 +12,17 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       android:layout_centerInParent="true"
-      app:colorGenerator="com.github.glomadrian.grav.generator.paint.OneColorGenerator"
-      app:grav_color="#1cffffff"
+      app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+      app:grav_colors="@array/Spectral"
       app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
-      app:cell_size="400"
-      app:variance="100"
+      app:cell_size="100"
+      app:variance="200"
       app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGravGenerator"
-      app:size="30dp"
-      app:animationGenerator="com.github.glomadrian.grav.generator.animation.VerticalMoveAnimator"
-      app:animation_variance="100dp"
-      app:min_animation_time="3000"
-      app:max_animation_time="8000"
-
+      app:size="3dp"
+      app:animationGenerator="com.github.glomadrian.grav.generator.animation.GravBallSizeAnimation"
+      app:min_animation_time="2000"
+      app:max_animation_time="5800"
+      app:animation_variance="10dp"
       />
 
 </RelativeLayout>
