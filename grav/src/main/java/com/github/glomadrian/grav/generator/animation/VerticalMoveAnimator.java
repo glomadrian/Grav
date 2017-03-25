@@ -33,10 +33,7 @@ public class VerticalMoveAnimator extends GravAnimatorGenerator<Grav> {
       @Override
       public void onUpdate(Grav grav, ValueAnimator animator) {
         float value = (float) animator.getAnimatedValue();
-        PointF drawPoint = new PointF();
-        drawPoint.x = grav.getStartPoint().x;
-        drawPoint.y = value;
-        grav.setDrawPoint(drawPoint);
+        grav.setY(value);
       }
     };
   }

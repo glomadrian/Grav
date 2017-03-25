@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
 import com.github.glomadrian.grav.generator.animation.GravAnimatorGenerator;
-import com.github.glomadrian.grav.generator.animation.HorizontalMoveAnimator;
+import com.github.glomadrian.grav.generator.animation.ShakeAnimator;
 import com.github.glomadrian.grav.generator.grav.BallGravGenerator;
 import com.github.glomadrian.grav.generator.grav.GravGenerator;
 import com.github.glomadrian.grav.generator.paint.PaintGenerator;
@@ -49,7 +49,7 @@ public class GeneratorFactory {
 
   public GravAnimatorGenerator createAnimator(String className, TypedArray attributeSet) {
     if (className == null || className.isEmpty()) {
-      return new HorizontalMoveAnimator();
+      return new ShakeAnimator();
     }
     GravAnimatorGenerator generator = ClassUtil.getClassByName(className, GravAnimatorGenerator.class);
     generator.configure(attributeSet, context);

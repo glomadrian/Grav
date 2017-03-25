@@ -21,16 +21,23 @@ public abstract class Grav {
 
   protected abstract void draw(Canvas canvas, PointF drawPoint);
 
-  public void animate(){
-
+  public void animate() {
   }
 
-  public void setDrawPoint(PointF point){
-    this.drawPoint = point;
+  public void setX(float x) {
+    drawPoint.x = x;
+  }
+
+  public void setY(float y) {
+    drawPoint.y = y;
   }
 
   public PointF getDrawPoint() {
     return drawPoint;
+  }
+
+  public void setDrawPoint(PointF point) {
+    this.drawPoint = point;
   }
 
   public PointF getStartPoint() {

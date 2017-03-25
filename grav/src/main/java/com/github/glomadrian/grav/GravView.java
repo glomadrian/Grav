@@ -77,7 +77,7 @@ public class GravView extends View {
   }
 
   private void initializeRefreshAnimator() {
-    viewRefreshAnimator = ValueAnimator.ofInt(0, 100);
+    viewRefreshAnimator = ValueAnimator.ofInt(0, 1);
     viewRefreshAnimator.setRepeatCount(ValueAnimator.INFINITE);
     viewRefreshAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
       @Override

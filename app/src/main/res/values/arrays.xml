@@ -15,7 +15,8 @@
   </string-array>
 
   <string-array name="Animations">
-    <item>com.github.glomadrian.grav.generator.animation.GravBallSizeAnimation</item>
-    <item>com.github.glomadrian.grav.generator.animation.HorizontalEdgeAnimation</item>
+    <item>com.github.glomadrian.grav.generator.animation.DownToUpAnimator</item>
+    <item>com.github.glomadrian.grav.generator.animation.GravBallSizeAnimator</item>
+    <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
   </string-array>
 </resources>

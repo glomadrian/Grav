@@ -18,5 +18,11 @@
     <attr name="animation_variance" format="dimension" />
     <attr name="grav_ball_size_anim_from_size" format="dimension" />
     <attr name="grav_ball_size_anim_to_size" format="dimension" />
+    <attr name="down_to_up_min_animation_time" format="integer" />
+    <attr name="down_to_up_max_animation_time" format="integer" />
+    <attr name="shake_direction" format="enum">
+      <enum name="horizontal" value="0"/>
+      <enum name="vertical" value="1"/>
+    </attr>
   </declare-styleable>
 </resources>

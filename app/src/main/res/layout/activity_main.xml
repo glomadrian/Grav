@@ -19,11 +19,13 @@
       app:variance="200"
       app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGravGenerator"
       app:size="3dp"
-      app:animationGenerator="com.github.glomadrian.grav.generator.animation.GravBallSizeAnimation"
       app:animationGenerators="@array/Animations"
       app:min_animation_time="1000"
       app:max_animation_time="2800"
       app:animation_variance="10dp"
+      app:grav_ball_size_anim_from_size="5dp"
+      app:grav_ball_size_anim_to_size="10dp"
+      app:shake_direction="horizontal"
       />
 
 </RelativeLayout>

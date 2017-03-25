@@ -7,16 +7,28 @@ import android.graphics.PointF;
 import com.github.glomadrian.grav.R;
 import com.github.glomadrian.grav.figures.Grav;
 
-public class HorizontalEdgeAnimation extends GravAnimatorGenerator<Grav> {
+public class ShakeAnimator extends GravAnimatorGenerator<Grav> {
+  private float variance = 50;
   private long minAnimationDuration = 2000;
   private long maxAnimationDuration = 3000;
+  private Direction direction = Direction.HORIZONTAL;
 
   @Override
   protected ValueAnimator createValueAnimator(Grav grav, int width, int height) {
-    ValueAnimator valueAnimator = ValueAnimator.ofFloat(0 - 50 , width + 50);
+    PointF startPoint = grav.getStartPoint();
+    ValueAnimator valueAnimator = createValueAnimatorFor(direction, startPoint);
     valueAnimator.setDuration(getRandomDuration(minAnimationDuration, maxAnimationDuration));
     valueAnimator.setRepeatCount(ValueAnimator.INFINITE);
+    valueAnimator.setRepeatMode(ValueAnimator.REVERSE);
     return valueAnimator;
+  }
+
+  private ValueAnimator createValueAnimatorFor(Direction direction, PointF startPoint) {
+    if (direction.equals(Direction.HORIZONTAL)){
+      return ValueAnimator.ofFloat(startPoint.x - variance, startPoint.x + variance);
+    } else {
+      return ValueAnimator.ofFloat(startPoint.y - variance, startPoint.y + variance);
+    }
   }
 
   private long getRandomDuration(long min, long max){
@@ -29,17 +41,29 @@ public class HorizontalEdgeAnimation extends GravAnimatorGenerator<Grav> {
       @Override
       public void onUpdate(Grav grav, ValueAnimator animator) {
         float value = (float) animator.getAnimatedValue();
-        PointF drawPoint = new PointF();
-        drawPoint.x = value;
-        drawPoint.y = grav.getStartPoint().y;
-        grav.setDrawPoint(drawPoint);
+        if (direction.equals(Direction.HORIZONTAL)) {
+          grav.setX(value);
+        } else {
+          grav.setY(value);
+        }
       }
     };
   }
 
   @Override
   public void configure(TypedArray attributeSet, Context context) {
+    variance = attributeSet.getDimension(R.styleable.GravView_animation_variance, variance);
     minAnimationDuration = attributeSet.getInteger(R.styleable.GravView_min_animation_time, (int) minAnimationDuration);
     maxAnimationDuration = attributeSet.getInteger(R.styleable.GravView_max_animation_time, (int) maxAnimationDuration);
+    int directionEnum = attributeSet.getInteger(R.styleable.GravView_shake_direction, 0);
+    if (directionEnum == 0){
+      direction = Direction.HORIZONTAL;
+    } else {
+      direction = Direction.VERTICAL;
+    }
+  }
+
+  private enum Direction{
+    HORIZONTAL, VERTICAL
   }
 }
