@@ -4,6 +4,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PointF;
+import android.util.AttributeSet;
 import com.github.glomadrian.grav.R;
 import com.github.glomadrian.grav.figures.Grav;
 
@@ -51,16 +52,18 @@ public class ShakeAnimator extends GravAnimatorGenerator<Grav> {
   }
 
   @Override
-  public void configure(TypedArray attributeSet, Context context) {
-    variance = attributeSet.getDimension(R.styleable.GravView_animation_variance, variance);
-    minAnimationDuration = attributeSet.getInteger(R.styleable.GravView_min_animation_time, (int) minAnimationDuration);
-    maxAnimationDuration = attributeSet.getInteger(R.styleable.GravView_max_animation_time, (int) maxAnimationDuration);
-    int directionEnum = attributeSet.getInteger(R.styleable.GravView_shake_direction, 0);
+  public void configure(AttributeSet attributeSet, Context context) {
+    TypedArray attributes = context.getTheme().obtainStyledAttributes(attributeSet, R.styleable.ShakeAnimator, 0, 0);
+    variance = attributes.getDimension(R.styleable.ShakeAnimator_shake_variance, variance);
+    minAnimationDuration = attributes.getInteger(R.styleable.ShakeAnimator_shake_min_duration, (int) minAnimationDuration);
+    maxAnimationDuration = attributes.getInteger(R.styleable.ShakeAnimator_shake_max_duration, (int) maxAnimationDuration);
+    int directionEnum = attributes.getInteger(R.styleable.ShakeAnimator_shake_direction, 0);
     if (directionEnum == 0){
       direction = Direction.HORIZONTAL;
     } else {
       direction = Direction.VERTICAL;
     }
+    attributes.recycle();
   }
 
   private enum Direction{

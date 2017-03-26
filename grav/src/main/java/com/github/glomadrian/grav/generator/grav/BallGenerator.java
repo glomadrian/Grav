@@ -4,11 +4,12 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Paint;
 import android.graphics.PointF;
+import android.util.AttributeSet;
 import com.github.glomadrian.grav.R;
 import com.github.glomadrian.grav.figures.GravBall;
 import com.github.glomadrian.grav.figures.Grav;
 
-public class BallGravGenerator implements GravGenerator {
+public class BallGenerator implements GravGenerator {
   private float radius = 90;
 
   @Override
@@ -17,7 +18,9 @@ public class BallGravGenerator implements GravGenerator {
   }
 
   @Override
-  public void configure(TypedArray attributeSet, Context context) {
-    radius = attributeSet.getDimension(R.styleable.GravView_size, radius);
+  public void configure(AttributeSet attributeSet, Context context) {
+    TypedArray attributes = context.getTheme().obtainStyledAttributes(attributeSet, R.styleable.BallGenerator, 0, 0);
+    radius = attributes.getDimension(R.styleable.BallGenerator_ball_size, radius);
+    attributes.recycle();
   }
 }

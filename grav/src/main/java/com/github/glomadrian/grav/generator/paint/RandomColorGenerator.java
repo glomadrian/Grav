@@ -1,8 +1,8 @@
 package com.github.glomadrian.grav.generator.paint;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 import java.util.Random;
 
 public class RandomColorGenerator implements PaintGenerator {
@@ -17,6 +17,6 @@ public class RandomColorGenerator implements PaintGenerator {
   }
 
   @Override
-  public void configure(TypedArray attributeSet, Context context) {
+  public void configure(AttributeSet attributeSet, Context context) {
   }
 }

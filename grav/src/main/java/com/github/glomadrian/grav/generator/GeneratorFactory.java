@@ -3,9 +3,10 @@ package com.github.glomadrian.grav.generator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.Nullable;
+import android.util.AttributeSet;
 import com.github.glomadrian.grav.generator.animation.GravAnimatorGenerator;
 import com.github.glomadrian.grav.generator.animation.ShakeAnimator;
-import com.github.glomadrian.grav.generator.grav.BallGravGenerator;
+import com.github.glomadrian.grav.generator.grav.BallGenerator;
 import com.github.glomadrian.grav.generator.grav.GravGenerator;
 import com.github.glomadrian.grav.generator.paint.PaintGenerator;
 import com.github.glomadrian.grav.generator.paint.RandomColorGenerator;
@@ -20,16 +21,16 @@ public class GeneratorFactory {
     this.context = context;
   }
 
-  public PaintGenerator createPaint(String className, TypedArray attributeSet) {
+  public PaintGenerator createPaint(String className, AttributeSet attrs) {
     if (className == null || className.isEmpty()) {
       return new RandomColorGenerator();
     }
     PaintGenerator paintGenerator = ClassUtil.getClassByName(className, PaintGenerator.class);
-    paintGenerator.configure(attributeSet, context);
+    paintGenerator.configure(attrs, context);
     return paintGenerator;
   }
 
-  public PointGenerator createPoint(String className, TypedArray attributeSet) {
+  public PointGenerator createPoint(String className, AttributeSet attributeSet) {
     if (className == null || className.isEmpty()) {
       return new RegularPointGenerator();
     }
@@ -38,28 +39,18 @@ public class GeneratorFactory {
     return generator;
   }
 
-  public GravGenerator createGrav(String className, TypedArray attributeSet) {
+  public GravGenerator createGrav(String className, AttributeSet attrs) {
     if (className == null || className.isEmpty()) {
-      return new BallGravGenerator();
+      return new BallGenerator();
     }
     GravGenerator generator = ClassUtil.getClassByName(className, GravGenerator.class);
-    generator.configure(attributeSet, context);
+    generator.configure(attrs, context);
     return generator;
   }
 
-  public GravAnimatorGenerator createAnimator(String className, TypedArray attributeSet) {
+  public GravAnimatorGenerator createAnimator(String className, AttributeSet attributeSet) {
     if (className == null || className.isEmpty()) {
       return new ShakeAnimator();
-    }
-    GravAnimatorGenerator generator = ClassUtil.getClassByName(className, GravAnimatorGenerator.class);
-    generator.configure(attributeSet, context);
-    return generator;
-  }
-
-  @Nullable
-  public GravAnimatorGenerator createAnimatorWithoutDefault(String className, TypedArray attributeSet) {
-    if (className == null || className.isEmpty()) {
-      return null;
     }
     GravAnimatorGenerator generator = ClassUtil.getClassByName(className, GravAnimatorGenerator.class);
     generator.configure(attributeSet, context);

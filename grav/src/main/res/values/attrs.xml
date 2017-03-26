@@ -6,23 +6,62 @@
     <attr name="gravGenerator" format="string" />
     <attr name="animationGenerator" format="string" />
     <attr name="animationGenerators" format="reference" />
-    <attr name="grav_color" format="color" />
-    <attr name="grav_colors" format="reference" />
-    <attr name="cell_size" format="integer" />
-    <attr name="variance" format="integer" />
-    <attr name="size" format="dimension" />
-    <attr name="width" format="dimension" />
-    <attr name="height" format="dimension" />
-    <attr name="min_animation_time" format="integer" />
-    <attr name="max_animation_time" format="integer" />
-    <attr name="animation_variance" format="dimension" />
-    <attr name="grav_ball_size_anim_from_size" format="dimension" />
-    <attr name="grav_ball_size_anim_to_size" format="dimension" />
-    <attr name="down_to_up_min_animation_time" format="integer" />
-    <attr name="down_to_up_max_animation_time" format="integer" />
+  </declare-styleable>
+
+  <declare-styleable name="SingleColorGenerator">
+    <attr name="single_color" format="color" />
+  </declare-styleable>
+
+  <declare-styleable name="ArrayColorGenerator">
+    <attr name="array_colors" format="reference" />
+  </declare-styleable>
+
+  <declare-styleable name="BallGenerator">
+    <attr name="ball_size" format="dimension" />
+  </declare-styleable>
+
+  <declare-styleable name="RectangleGenerator">
+    <attr name="rectangle_width" format="dimension" />
+    <attr name="rectangle_height" format="dimension" />
+  </declare-styleable>
+
+  <declare-styleable name="RegularPointGenerator">
+    <attr name="regular_cell_size" format="integer" />
+    <attr name="regular_variance" format="integer" />
+  </declare-styleable>
+
+  <declare-styleable name="CircularPointGenerator">
+    <attr name="circular_cell_size" format="integer" />
+    <attr name="circular_variance" format="integer" />
+  </declare-styleable>
+
+  <declare-styleable name="ShakeAnimator">
+    <attr name="shake_min_duration" format="integer" />
+    <attr name="shake_max_duration" format="integer" />
+    <attr name="shake_variance" format="dimension" />
     <attr name="shake_direction" format="enum">
       <enum name="horizontal" value="0"/>
       <enum name="vertical" value="1"/>
     </attr>
   </declare-styleable>
+
+  <declare-styleable name="SideToSideAnimator">
+    <attr name="side_to_side_min_duration" format="integer" />
+    <attr name="side_to_side_max_duration" format="integer" />
+    <attr name="side_to_side_direction" format="enum">
+      <enum name="leftToRight" value="0"/>
+      <enum name="rightToLeft" value="1"/>
+      <enum name="upToDown" value="2"/>
+      <enum name="downToUp" value="3"/>
+    </attr>
+  </declare-styleable>
+
+
+  <declare-styleable name="BallSizeAnimator">
+    <attr name="ball_size_min_duration" format="integer" />
+    <attr name="ball_size_max_duration" format="integer" />
+    <attr name="ball_size_from_size" format="dimension" />
+    <attr name="ball_size_to_size" format="dimension" />
+  </declare-styleable>
+
 </resources>

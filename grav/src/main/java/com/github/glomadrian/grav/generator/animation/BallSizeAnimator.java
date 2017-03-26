@@ -4,11 +4,12 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.PointF;
+import android.util.AttributeSet;
 import com.github.glomadrian.grav.R;
 import com.github.glomadrian.grav.figures.Grav;
 import com.github.glomadrian.grav.figures.GravBall;
 
-public class GravBallSizeAnimator extends GravAnimatorGenerator<GravBall> {
+public class BallSizeAnimator extends GravAnimatorGenerator<GravBall> {
   private long minAnimationDuration = 2000;
   private long maxAnimationDuration = 3000;
   private float fromSize = 0;
@@ -39,10 +40,12 @@ public class GravBallSizeAnimator extends GravAnimatorGenerator<GravBall> {
   }
 
   @Override
-  public void configure(TypedArray attributeSet, Context context) {
-    minAnimationDuration = attributeSet.getInteger(R.styleable.GravView_min_animation_time, (int) minAnimationDuration);
-    maxAnimationDuration = attributeSet.getInteger(R.styleable.GravView_max_animation_time, (int) maxAnimationDuration);
-    fromSize = attributeSet.getDimension(R.styleable.GravView_grav_ball_size_anim_from_size, fromSize);
-    toSize = attributeSet.getDimension(R.styleable.GravView_grav_ball_size_anim_to_size, toSize);
+  public void configure(AttributeSet attributeSet, Context context) {
+    TypedArray typedArray = context.getTheme().obtainStyledAttributes(attributeSet, R.styleable.BallSizeAnimator, 0, 0);
+    minAnimationDuration = typedArray.getInteger(R.styleable.BallSizeAnimator_ball_size_min_duration, (int) minAnimationDuration);
+    maxAnimationDuration = typedArray.getInteger(R.styleable.BallSizeAnimator_ball_size_max_duration, (int) maxAnimationDuration);
+    fromSize = typedArray.getDimension(R.styleable.BallSizeAnimator_ball_size_from_size, fromSize);
+    toSize = typedArray.getDimension(R.styleable.BallSizeAnimator_ball_size_to_size, toSize);
+    typedArray.recycle();
   }
 }

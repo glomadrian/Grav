@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 import com.github.glomadrian.grav.R;
 
 public class OneColorGenerator implements PaintGenerator {
@@ -18,7 +19,9 @@ public class OneColorGenerator implements PaintGenerator {
   }
 
   @Override
-  public void configure(TypedArray attributeSet, Context context) {
-    color = attributeSet.getColor(R.styleable.GravView_grav_color, color);
+  public void configure(AttributeSet attributeSet, Context context) {
+    TypedArray attributes = context.getTheme().obtainStyledAttributes(attributeSet, R.styleable.SingleColorGenerator, 0, 0);
+    color = attributes.getColor(R.styleable.SingleColorGenerator_single_color, color);
+    attributes.recycle();
   }
 }
