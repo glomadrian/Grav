@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1b1a1b"
+    >
+
+  <FrameLayout
+      android:layout_centerInParent="true"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <com.github.glomadrian.grav.GravView
+        android:id="@+id/grav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+        app:array_colors="@array/falcon"
+        app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+        app:regular_cell_size="100"
+        app:regular_variance="200"
+        app:gravGenerator="com.github.glomadrian.grav.generator.grav.RectangleGenerator"
+        app:rectangle_width="15dp"
+        app:rectangle_height="5dp"
+        app:ball_size="3dp"
+        app:animationGenerators="@array/KamehamehaAnimations"
+        app:side_to_side_min_duration="400"
+        app:side_to_side_max_duration="800"
+        app:side_to_side_direction="rightToLeft"
+        app:shake_variance="5dp"
+        app:shake_direction="vertical"
+        />
+    <android.support.v7.widget.AppCompatImageView
+        app:srcCompat="@drawable/millenium_falcon"
+        android:layout_margin="20dp"
+        android:layout_width="150dp"
+        android:layout_gravity="center_vertical"
+        android:layout_height="80dp" />
+  </FrameLayout>
+</RelativeLayout>

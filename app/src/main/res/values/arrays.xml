@@ -14,10 +14,41 @@
     <item>#5E4FA2</item>
   </string-array>
 
+  <string-array name="falcon">
+    <item>#106fff</item>
+    <item>#80e5ff</item>
+    <item>#1048a3</item>
+    <item>#bce5ff</item>
+  </string-array>
+
+  <string-array name="bubble">
+    <item>#41ffffff</item>
+    <item>#18ffffff</item>
+    <item>#1fffffff</item>
+    <item>#25ffffff</item>
+  </string-array>
+
   <string-array name="Animations">
     <item>com.github.glomadrian.grav.generator.animation.SideToSideAnimator</item>
     <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
     <item>com.github.glomadrian.grav.generator.animation.BallSizeAnimator</item>
+  </string-array>
+
+  <string-array name="BallWaveAnimations">
+    <item>com.github.glomadrian.grav.generator.animation.SideToSideAnimator</item>
+    <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
+    <item>com.github.glomadrian.grav.generator.animation.BallSizeAnimator</item>
+  </string-array>
+
+  <string-array name="BubbleAnimations">
+    <item>com.github.glomadrian.grav.generator.animation.SideToSideAnimator</item>
+    <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
+  </string-array>
+
+
+  <string-array name="KamehamehaAnimations">
+    <item>com.github.glomadrian.grav.generator.animation.SideToSideAnimator</item>
+    <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
   </string-array>
 
   <string-array name="WallaIcon">

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:background="@drawable/bubble_background"
+              android:orientation="vertical">
+
+  <TextView
+      android:layout_marginTop="80dp"
+      android:text="LOGIN"
+      android:textSize="20sp"
+      android:textColor="#cfffffff"
+      android:layout_centerHorizontal="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
+  <LinearLayout
+      android:id="@+id/login"
+      android:layout_centerInParent="true"
+      android:orientation="vertical"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:background="#34ffffff"
+        android:layout_width="300dp"
+        android:layout_height="50dp">
+
+      <EditText
+          android:hint="Name"
+          android:layout_margin="10dp"
+          android:background="@android:color/transparent"
+          android:layout_width="match_parent"
+          android:textColor="#fff"
+          android:textColorHint="#a8ffffff"
+
+          android:layout_height="wrap_content" />
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_marginTop="20dp"
+        android:background="#34ffffff"
+        android:layout_width="300dp"
+        android:layout_height="50dp">
+      <EditText
+          android:hint="Password"
+          android:layout_margin="10dp"
+          android:background="@android:color/transparent"
+          android:layout_width="match_parent"
+          android:textColorHint="#a8ffffff"
+          android:textColor="#fff"
+          android:layout_height="wrap_content" />
+    </FrameLayout>
+
+  </LinearLayout>
+
+  <FrameLayout
+      android:layout_below="@id/login"
+      android:layout_centerHorizontal="true"
+      android:layout_width="300dp"
+      android:layout_margin="50dp"
+      android:background="@drawable/login_background"
+      android:layout_height="50dp" >
+
+    <TextView
+        android:layout_gravity="center"
+        android:text="Login now"
+        android:textColor="#c3ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+  </FrameLayout>
+
+  <com.github.glomadrian.grav.GravView
+      android:id="@+id/grav"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_centerInParent="true"
+      app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+      app:array_colors="@array/bubble"
+      app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+      app:regular_cell_size="300"
+      app:regular_variance="200"
+      app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+      app:ball_from_size="10dp"
+      app:ball_to_size="20dp"
+      app:animationGenerators="@array/BubbleAnimations"
+      app:side_to_side_min_duration="10000"
+      app:side_to_side_max_duration="10000"
+      app:side_to_side_direction="leftToRight"
+      app:shake_direction="vertical"
+      app:shake_min_duration="10000"
+      app:shake_max_duration="20000"
+      app:shake_variance="500dp"
+      />
+
+
+</RelativeLayout>

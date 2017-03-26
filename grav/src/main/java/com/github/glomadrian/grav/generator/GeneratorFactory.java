@@ -1,12 +1,9 @@
 package com.github.glomadrian.grav.generator;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import com.github.glomadrian.grav.generator.animation.GravAnimatorGenerator;
-import com.github.glomadrian.grav.generator.animation.ShakeAnimator;
 import com.github.glomadrian.grav.generator.grav.BallGenerator;
 import com.github.glomadrian.grav.generator.grav.GravGenerator;
 import com.github.glomadrian.grav.generator.paint.PaintGenerator;

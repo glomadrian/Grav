@@ -9,6 +9,7 @@ import android.graphics.PointF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import com.github.glomadrian.grav.figures.Grav;
 import com.github.glomadrian.grav.generator.GeneratorFactory;
 import com.github.glomadrian.grav.generator.animation.GravAnimatorGenerator;
@@ -55,6 +56,12 @@ public class GravView extends View {
         typedArray.recycle();
       }
     }
+    getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+      @Override
+      public void onGlobalLayout() {
+        start();
+      }
+    });
   }
 
   private Vector<GravAnimatorGenerator> obtainGravAnimators(AttributeSet attributeSet, TypedArray attributes,
@@ -131,6 +138,13 @@ public class GravView extends View {
     viewRefreshAnimator.start();
     for (ValueAnimator valueAnimator : gravAnimators) {
       valueAnimator.start();
+    }
+  }
+
+  public void stop(){
+    viewRefreshAnimator.end();
+    for (ValueAnimator valueAnimator : gravAnimators) {
+      valueAnimator.end();
     }
   }
 }

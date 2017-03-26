@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00C0AB"
+                tools:context="com.github.glomadrian.gravball.MainActivity">
+
+  <FrameLayout
+      android:layout_centerInParent="true"
+      android:layout_width="150dp"
+      android:layout_height="150dp">
+
+
+    <com.github.glomadrian.grav.GravView
+        android:id="@+id/grav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:colorGenerator="com.github.glomadrian.grav.generator.paint.OneColorGenerator"
+        app:single_color="#FFF"
+        app:pointGenerator="com.github.glomadrian.grav.generator.point.PercentPointGenerator"
+        app:ball_from_size="2dp"
+        app:ball_to_size="5dp"
+        app:animationGenerators="@array/WallaIcon"
+        app:alpha_from="100"
+        app:alpha_to="200"
+        app:alpha_min_duration="1600"
+        app:alpha_max_duration="3000"
+        app:shake_direction="vertical"
+        app:shake_variance="3dp"
+        app:shake_min_duration="1100"
+        app:shake_max_duration="3500"
+        app:percent_points_array="@array/walla_points_percent_points"
+        app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+        />
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_gravity="center"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/robot"
+        />
+  </FrameLayout>
+</RelativeLayout>

@@ -48,6 +48,7 @@
   </declare-styleable>
 
   <declare-styleable name="SideToSideAnimator">
+    <attr name="side_to_side_interpolator" format="string" />
     <attr name="side_to_side_min_duration" format="integer" />
     <attr name="side_to_side_max_duration" format="integer" />
     <attr name="side_to_side_direction" format="enum">

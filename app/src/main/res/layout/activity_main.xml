@@ -4,43 +4,96 @@
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#00C0AB"
-                tools:context="com.github.glomadrian.gravball.MainActivity">
+           >
 
-  <FrameLayout
-      android:layout_centerInParent="true"
-      android:layout_width="150dp"
-      android:layout_height="150dp">
+  <android.support.v4.widget.DrawerLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
 
-
-    <com.github.glomadrian.grav.GravView
-        android:id="@+id/grav"
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:colorGenerator="com.github.glomadrian.grav.generator.paint.OneColorGenerator"
-        app:single_color="#FFF"
-        app:pointGenerator="com.github.glomadrian.grav.generator.point.PercentPointGenerator"
-        app:ball_from_size="2dp"
-        app:ball_to_size="5dp"
-        app:animationGenerators="@array/WallaIcon"
-        app:alpha_from="100"
-        app:alpha_to="200"
-        app:alpha_min_duration="1600"
-        app:alpha_max_duration="3000"
-        app:shake_direction="vertical"
-        app:shake_variance="3dp"
-        app:shake_min_duration="1100"
-        app:shake_max_duration="3500"
-        app:percent_points_array="@array/walla_points_percent_points"
-        app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
-        />
+        android:layout_height="match_parent" />
 
-    <android.support.v7.widget.AppCompatImageView
-        android:layout_gravity="center"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:srcCompat="@drawable/robot"
-        />
-  </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorPrimary"
+        >
+
+      <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/home"
+            android:text="Home"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/ball_wave"
+            android:text="Ball Wave"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/kamehameha"
+            android:text="Falcon"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/bubble"
+            android:text="Bubble"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+      </LinearLayout>
+
+    </FrameLayout>
+
+
+
+  </android.support.v4.widget.DrawerLayout>
 
 </RelativeLayout>
