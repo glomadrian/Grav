@@ -2,6 +2,7 @@ package com.github.glomadrian.grav.generator;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import com.github.glomadrian.grav.generator.animation.GravAnimatorGenerator;
@@ -48,9 +49,10 @@ public class GeneratorFactory {
     return generator;
   }
 
+  @NonNull
   public GravAnimatorGenerator createAnimator(String className, AttributeSet attributeSet) {
     if (className == null || className.isEmpty()) {
-      return new ShakeAnimator();
+      return null;
     }
     GravAnimatorGenerator generator = ClassUtil.getClassByName(className, GravAnimatorGenerator.class);
     generator.configure(attributeSet, context);

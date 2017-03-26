@@ -72,7 +72,9 @@ public class GravView extends View {
     } else {
       GravAnimatorGenerator gravAnimatorGenerator =
       generatorFactory.createAnimator(attributes.getString(R.styleable.GravView_animationGenerator), attributeSet);
-      gravAnimatorGenerators.add(gravAnimatorGenerator);
+      if (gravAnimatorGenerator != null) {
+        gravAnimatorGenerators.add(gravAnimatorGenerator);
+      }
     }
     return gravAnimatorGenerators;
   }

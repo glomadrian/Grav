@@ -18,6 +18,8 @@
 
   <declare-styleable name="BallGenerator">
     <attr name="ball_size" format="dimension" />
+    <attr name="ball_from_size" format="dimension" />
+    <attr name="ball_to_size" format="dimension" />
   </declare-styleable>
 
   <declare-styleable name="RectangleGenerator">
@@ -56,12 +58,22 @@
     </attr>
   </declare-styleable>
 
-
   <declare-styleable name="BallSizeAnimator">
     <attr name="ball_size_min_duration" format="integer" />
     <attr name="ball_size_max_duration" format="integer" />
     <attr name="ball_size_from_size" format="dimension" />
     <attr name="ball_size_to_size" format="dimension" />
+  </declare-styleable>
+
+  <declare-styleable name="PercentPointGenerator">
+    <attr name="percent_points_array" format="reference" />
+  </declare-styleable>
+
+  <declare-styleable name="AlphaAnimator">
+    <attr name="alpha_from" format="integer" />
+    <attr name="alpha_to" format="integer" />
+    <attr name="alpha_min_duration" format="integer" />
+    <attr name="alpha_max_duration" format="integer" />
   </declare-styleable>
 
 </resources>

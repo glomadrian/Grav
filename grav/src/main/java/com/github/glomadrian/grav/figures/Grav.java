@@ -43,4 +43,8 @@ public abstract class Grav {
   public PointF getStartPoint() {
     return startPoint;
   }
+
+  public Paint getPaint() {
+    return paint;
+  }
 }
