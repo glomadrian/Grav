@@ -4,6 +4,7 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.animation.Interpolator;
 import com.github.glomadrian.grav.R;
 import com.github.glomadrian.grav.figures.Grav;
@@ -51,6 +52,7 @@ public class SideToSideAnimator extends GravAnimatorGenerator<Grav> {
     return new GravAnimatorGenerator.UpdageGravListener<Grav>() {
       @Override
       public void onUpdate(Grav grav, ValueAnimator animator) {
+        Log.d("asd", "onUpdate() called with: grav = [" + grav + "], animator = [" + animator + "]");
         float value = (float) animator.getAnimatedValue();
         if (direction.equals(Direction.LEFT_TO_RIGHT) || direction.equals(Direction.RIGHT_TO_LEFT)) {
           grav.setX(value);

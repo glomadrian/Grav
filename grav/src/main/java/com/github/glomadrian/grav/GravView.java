@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PointF;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -142,8 +143,16 @@ public class GravView extends View {
   }
 
   public void stop(){
+    viewRefreshAnimator.setRepeatCount(0);
+    viewRefreshAnimator.removeAllListeners();
+    viewRefreshAnimator.removeAllUpdateListeners();
+    viewRefreshAnimator.cancel();
     viewRefreshAnimator.end();
     for (ValueAnimator valueAnimator : gravAnimators) {
+      valueAnimator.setRepeatCount(0);
+      valueAnimator.removeAllListeners();
+      valueAnimator.removeAllUpdateListeners();
+      valueAnimator.cancel();
       valueAnimator.end();
     }
   }
