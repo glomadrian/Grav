@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
-    showView(R.layout.home);
+    showView(R.layout.grav);
   }
 
    private void showView(@LayoutRes int view){
@@ -25,10 +25,14 @@ public class MainActivity extends AppCompatActivity {
     showView(R.layout.ball_wave);
   }
 
+  @OnClick(R.id.grav)
+  public void gravClic(){
+    showView(R.layout.grav);
+  }
 
-  @OnClick(R.id.home)
+  @OnClick(R.id.robot)
   public void homeClick(){
-    showView(R.layout.home);
+    showView(R.layout.robot);
   }
 
   @OnClick(R.id.kamehameha)
@@ -39,5 +43,10 @@ public class MainActivity extends AppCompatActivity {
   @OnClick(R.id.bubble)
   public void bubbleClick(){
     showView(R.layout.bubble);
+  }
+
+  @OnClick(R.id.path)
+  public void pathClick(){
+    showView(R.layout.path);
   }
 }

@@ -28,6 +28,26 @@
     <item>#25ffffff</item>
   </string-array>
 
+  <string-array name="red">
+    <item>#ba0303</item>
+    <item>#ff7878</item>
+    <item>#9e3535</item>
+    <item>#fd3939</item>
+  </string-array>
+
+  <string-array name="black">
+    <item>#000000</item>
+    <item>#252525</item>
+    <item>#1e1e1e</item>
+    <item>#353535</item>
+  </string-array>
+
+
+  <string-array name="walla_colors">
+    <item>#2BA696</item>
+    <item>#22C5B1</item>
+  </string-array>
+
   <string-array name="Animations">
     <item>com.github.glomadrian.grav.generator.animation.SideToSideAnimator</item>
     <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
@@ -40,16 +60,33 @@
     <item>com.github.glomadrian.grav.generator.animation.BallSizeAnimator</item>
   </string-array>
 
+  <string-array name="GravAnimations">
+    <item>com.github.glomadrian.grav.generator.animation.SideToSideAnimator</item>
+    <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
+  </string-array>
+
   <string-array name="BubbleAnimations">
     <item>com.github.glomadrian.grav.generator.animation.SideToSideAnimator</item>
     <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
   </string-array>
 
 
-  <string-array name="KamehamehaAnimations">
+  <string-array name="FalconAnimations">
     <item>com.github.glomadrian.grav.generator.animation.SideToSideAnimator</item>
     <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
   </string-array>
+
+
+  <string-array name="path">
+    <item>com.github.glomadrian.grav.generator.animation.PathAnimator</item>
+    <item>com.github.glomadrian.grav.generator.animation.BallSizeAnimator</item>
+  </string-array>
+
+  <string-array name="gravAnimations">
+    <item>com.github.glomadrian.grav.generator.animation.PathAnimator</item>
+    <item>com.github.glomadrian.grav.generator.animation.BallSizeAnimator</item>
+  </string-array>
+
 
   <string-array name="WallaIcon">
     <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>

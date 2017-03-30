@@ -32,6 +32,14 @@ public abstract class Grav {
     drawPoint.y = y;
   }
 
+  public float getX(){
+    return drawPoint.x;
+  }
+
+  public float getY() {
+    return drawPoint.y;
+  }
+
   public PointF getDrawPoint() {
     return drawPoint;
   }
@@ -47,4 +55,6 @@ public abstract class Grav {
   public Paint getPaint() {
     return paint;
   }
+
+
 }

@@ -30,7 +30,22 @@
 
         <TextView
             android:textAlignment="center"
-            android:id="@+id/home"
+            android:id="@+id/grav"
+            android:text="grav"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/robot"
             android:text="Home"
             android:textColor="@android:color/white"
             android:textSize="20dp"
@@ -77,6 +92,21 @@
             android:textAlignment="center"
             android:id="@+id/bubble"
             android:text="Bubble"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/path"
+            android:text="Path"
             android:textColor="@android:color/white"
             android:textSize="20dp"
             android:padding="10dp"

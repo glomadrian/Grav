@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
+
+  <FrameLayout
+      android:layout_centerInParent="true"
+      android:layout_width="400dp"
+      android:layout_height="400dp">
+
+    <com.github.glomadrian.grav.GravView
+        android:id="@+id/grav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+        app:array_colors="@array/walla_colors"
+        app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+        app:regular_cell_size="200"
+        app:regular_variance="200"
+        app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+        app:ball_size_from_size="3dp"
+        app:ball_size_to_size="8dp"
+        app:animationGenerators="@array/path"
+        app:path_variance_from="0dp"
+        app:path_variance_to="30dp"
+        app:path="@string/wallapop"
+        app:path_original_width="@integer/wallapop_original_width"
+        app:path_original_height="@integer/wallapop_original_height"
+        />
+  </FrameLayout>
+</RelativeLayout>

@@ -77,4 +77,14 @@
     <attr name="alpha_max_duration" format="integer" />
   </declare-styleable>
 
+  <declare-styleable name="PathAnimator">
+    <attr name="path_variance_from" format="dimension" />
+    <attr name="path_variance_to" format="dimension" />
+    <attr name="path" format="string" />
+    <attr name="path_original_width" format="integer" />
+    <attr name="path_original_height" format="integer" />
+    <attr name="path_min_duration" format="integer" />
+    <attr name="path_max_duration" format="integer" />
+  </declare-styleable>
+
 </resources>
