@@ -12,12 +12,12 @@ on points
 <p/>
 
 <center>
-<img src="./art/wave.gif " alt="Drawing" width="250" />
-<img src="./art/login.gif " alt="Drawing" width="250" />
-<img src="./art/path.gif " alt="Drawing" width="250" />
-<img src="./art/falcon.gif " alt="Drawing" width="250" />
-<img src="./art/grav.gif " alt="Drawing" width="250" />
-<img src="./art/robot.gif " alt="Drawing" width="250" />
+<img src="./art/wave.gif " alt="Drawing" width="200" />
+<img src="./art/login.gif " alt="Drawing" width="200" />
+<img src="./art/path.gif " alt="Drawing" width="200" />
+<img src="./art/falcon.gif " alt="Drawing" width="200" />
+<img src="./art/grav.gif " alt="Drawing" width="200" />
+<img src="./art/robot.gif " alt="Drawing" width="200" />
 </center>
 
 ## How use it
