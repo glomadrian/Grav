@@ -52,7 +52,6 @@ public class SideToSideAnimator extends GravAnimatorGenerator<Grav> {
     return new GravAnimatorGenerator.UpdageGravListener<Grav>() {
       @Override
       public void onUpdate(Grav grav, ValueAnimator animator) {
-        Log.d("asd", "onUpdate() called with: grav = [" + grav + "], animator = [" + animator + "]");
         float value = (float) animator.getAnimatedValue();
         if (direction.equals(Direction.LEFT_TO_RIGHT) || direction.equals(Direction.RIGHT_TO_LEFT)) {
           grav.setX(value);

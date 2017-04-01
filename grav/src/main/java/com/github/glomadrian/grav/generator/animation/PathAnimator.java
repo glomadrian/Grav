@@ -44,7 +44,7 @@ public class PathAnimator extends GravAnimatorGenerator<Grav> {
     return min + (int)(Math.random() * max);
   }
 
-  private long getRandomVarianza(float min, float max){
+  private long getRandomVariance(float min, float max){
     return (long) (min + (Math.random() * max));
   }
 
@@ -68,7 +68,7 @@ public class PathAnimator extends GravAnimatorGenerator<Grav> {
 
   @Override
   protected UpdageGravListener<Grav> createUpdateListener() {
-    return new PathUpdateGravListener(getRandomVarianza(minVariance, maxVariance));
+    return new PathUpdateGravListener(getRandomVariance(minVariance, maxVariance));
   }
 
   @Override
@@ -81,6 +81,7 @@ public class PathAnimator extends GravAnimatorGenerator<Grav> {
     originalPathHeight = attributes.getInteger(R.styleable.PathAnimator_path_original_height, 0);
     minAnimationDuration = attributes.getInteger(R.styleable.PathAnimator_path_min_duration, minAnimationDuration);
     maxAnimationDuration = attributes.getInteger(R.styleable.PathAnimator_path_max_duration, maxAnimationDuration);
+    attributes.recycle();
   }
 
   private class PathUpdateGravListener implements UpdageGravListener<Grav> {

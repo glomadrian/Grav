@@ -50,14 +50,11 @@ public class SvgPathParser {
     mPathString = s;
     mIndex = 0;
     mLength = mPathString.length();
-
     PointF tempPoint1 = new PointF();
     PointF tempPoint2 = new PointF();
     PointF tempPoint3 = new PointF();
-
     Path p = new Path();
     p.setFillType(Path.FillType.WINDING);
-
     boolean firstMove = true;
     while (mIndex < mLength) {
       char command = consumeCommand();
@@ -83,49 +80,41 @@ public class SvgPathParser {
           mCurrentPoint.set(tempPoint1);
           break;
         }
-
         case 'C':
         case 'c': {
           // cubic bezier curve command
           if (mCurrentPoint.x == Float.NaN) {
             throw new ParseException("Relative commands require current point", mIndex);
           }
-
           while (advanceToNextToken() == TOKEN_VALUE) {
             consumeAndTransformPoint(tempPoint1, relative);
             consumeAndTransformPoint(tempPoint2, relative);
             consumeAndTransformPoint(tempPoint3, relative);
-            p.cubicTo(tempPoint1.x, tempPoint1.y, tempPoint2.x, tempPoint2.y, tempPoint3.x,
-                tempPoint3.y);
+            p.cubicTo(tempPoint1.x, tempPoint1.y, tempPoint2.x, tempPoint2.y, tempPoint3.x, tempPoint3.y);
           }
           mCurrentPoint.set(tempPoint3);
           break;
         }
-
         case 'Q':
         case 'q': {
           // quadratic bezier curve command
           if (mCurrentPoint.x == Float.NaN) {
             throw new ParseException("Relative commands require current point", mIndex);
           }
-
           while (advanceToNextToken() == TOKEN_VALUE) {
             consumeAndTransformPoint(tempPoint1, relative);
             consumeAndTransformPoint(tempPoint2, relative);
-
             p.quadTo(tempPoint1.x, tempPoint1.y, tempPoint2.x, tempPoint2.y);
           }
           mCurrentPoint.set(tempPoint2);
           break;
         }
-
         case 'L':
         case 'l': {
           // line command
           if (mCurrentPoint.x == Float.NaN) {
             throw new ParseException("Relative commands require current point", mIndex);
           }
-
           while (advanceToNextToken() == TOKEN_VALUE) {
             consumeAndTransformPoint(tempPoint1, relative);
             p.lineTo(tempPoint1.x, tempPoint1.y);
@@ -133,14 +122,12 @@ public class SvgPathParser {
           mCurrentPoint.set(tempPoint1);
           break;
         }
-
         case 'H':
         case 'h': {
           // horizontal line command
           if (mCurrentPoint.x == Float.NaN) {
             throw new ParseException("Relative commands require current point", mIndex);
           }
-
           while (advanceToNextToken() == TOKEN_VALUE) {
             float x = transformX(consumeValue());
             if (relative) {
@@ -151,14 +138,12 @@ public class SvgPathParser {
           mCurrentPoint.set(tempPoint1);
           break;
         }
-
         case 'V':
         case 'v': {
           // vertical line command
           if (mCurrentPoint.x == Float.NaN) {
             throw new ParseException("Relative commands require current point", mIndex);
           }
-
           while (advanceToNextToken() == TOKEN_VALUE) {
             float y = transformY(consumeValue());
             if (relative) {
@@ -169,7 +154,6 @@ public class SvgPathParser {
           mCurrentPoint.set(tempPoint1);
           break;
         }
-
         case 'Z':
         case 'z': {
           // close command
@@ -178,7 +162,6 @@ public class SvgPathParser {
         }
       }
     }
-
     return p;
   }
 
@@ -192,11 +175,9 @@ public class SvgPathParser {
       } else if (('0' <= c && c <= '9') || c == '.' || c == '-') {
         return (mCurrentToken = TOKEN_VALUE);
       }
-
       // skip unrecognized character
       ++mIndex;
     }
-
     return (mCurrentToken = TOKEN_EOF);
   }
 
@@ -205,7 +186,6 @@ public class SvgPathParser {
     if (mCurrentToken != TOKEN_RELATIVE_COMMAND && mCurrentToken != TOKEN_ABSOLUTE_COMMAND) {
       throw new ParseException("Expected command", mIndex);
     }
-
     return mPathString.charAt(mIndex++);
   }
 
@@ -223,7 +203,6 @@ public class SvgPathParser {
     if (mCurrentToken != TOKEN_VALUE) {
       throw new ParseException("Expected value", mIndex);
     }
-
     boolean start = true;
     boolean seenDot = false;
     int index = mIndex;
@@ -239,17 +218,15 @@ public class SvgPathParser {
       start = false;
       ++index;
     }
-
     if (index == mIndex) {
       throw new ParseException("Expected value", mIndex);
     }
-
     String str = mPathString.substring(mIndex, index);
     try {
       float value = Float.parseFloat(str);
       mIndex = index;
       return value;
-    } catch (NumberFormatException e) {
+    } catch(NumberFormatException e) {
       throw new ParseException("Invalid float value '" + str + "'.", mIndex);
     }
   }
