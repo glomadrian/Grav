@@ -21,9 +21,6 @@ public abstract class Grav {
 
   protected abstract void draw(Canvas canvas, PointF drawPoint);
 
-  public void animate() {
-  }
-
   public void setX(float x) {
     drawPoint.x = x;
   }
@@ -55,6 +52,4 @@ public abstract class Grav {
   public Paint getPaint() {
     return paint;
   }
-
-
 }

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/grav"
+        android:title="Grav"/>
+    <item
+        android:id="@+id/robot"
+        android:title="Robot"/>
+    <item
+        android:id="@+id/ball_wave"
+        android:title="Ball wave"/>
+    <item
+        android:id="@+id/falcon"
+        android:title="Falcon"/>
+    <item
+        android:id="@+id/bubble"
+        android:title="Bubble"/>
+
+    <item
+        android:id="@+id/path"
+        android:title="Path"/>
+  </group>
+</menu>

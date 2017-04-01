@@ -16,7 +16,7 @@
 package com.github.glomadrian.grav.generator.animation.path;
 
 /**
- * @author jorge
+ * @author Jorge Castillo Perez
  * @since 7/08/15
  */
 public class ConstrainedSvgPathParser extends SvgPathParser {

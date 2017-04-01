@@ -7,122 +7,35 @@
            >
 
   <android.support.v4.widget.DrawerLayout
+      android:id="@+id/drawer"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
 
-    <FrameLayout
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:orientation="vertical"
+        >
+      <android.support.v7.widget.Toolbar
+          android:id="@+id/toolbar"
+          android:background="@color/colorPrimary"
+          android:layout_width="match_parent"
+          android:layout_height="?attr/actionBarSize">
+      </android.support.v7.widget.Toolbar>
+
+      <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    </LinearLayout>
 
-
-    <FrameLayout
-        android:layout_width="200dp"
+    <android.support.design.widget.NavigationView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nav"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/colorPrimary"
-        >
-
-      <LinearLayout
-          android:orientation="vertical"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent">
-
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/grav"
-            android:text="grav"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimaryDark"/>
-
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/robot"
-            android:text="Home"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimaryDark"/>
-
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/ball_wave"
-            android:text="Ball Wave"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimaryDark"/>
-
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/kamehameha"
-            android:text="Falcon"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimaryDark"/>
-
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/bubble"
-            android:text="Bubble"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimaryDark"/>
-
-        <TextView
-            android:textAlignment="center"
-            android:id="@+id/path"
-            android:text="Path"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:padding="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/colorPrimaryDark"/>
-
-      </LinearLayout>
-
-    </FrameLayout>
-
-
+        app:menu="@menu/nav"/>
 
   </android.support.v4.widget.DrawerLayout>
 
