@@ -11,14 +11,14 @@ Grav is a library for android which allow you to make multiple animations based
 on points
 <p/>
 
-<center>
+<p align="center">
 <img src="./art/wave.gif " alt="Drawing" width="200" />
 <img src="./art/login.gif " alt="Drawing" width="200" />
 <img src="./art/path.gif " alt="Drawing" width="200" />
 <img src="./art/falcon.gif " alt="Drawing" width="200" />
 <img src="./art/grav.gif " alt="Drawing" width="200" />
 <img src="./art/robot.gif " alt="Drawing" width="200" />
-</center>
+<p/>
 
 ## How use it
 
