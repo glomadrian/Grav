@@ -4,112 +4,79 @@
 
 <center>
 <img src="./art/grav.png " alt="Drawing" width="250" />
-</center>
 </br>
+</center>
 <p>
 Grav is a library for android which allow you to make multiple animations based
 on points
 <p/>
 
-### Samples
+<center>
+<img src="./art/wave.gif " alt="Drawing" width="250" />
+<img src="./art/login.gif " alt="Drawing" width="250" />
+<img src="./art/path.gif " alt="Drawing" width="250" />
+<img src="./art/falcon.gif " alt="Drawing" width="250" />
+<img src="./art/grav.gif " alt="Drawing" width="250" />
+<img src="./art/robot.gif " alt="Drawing" width="250" />
+</center>
+
+## How use it
 
 
-  <com.github.glomadrian.grav.GravView
-      android:id="@+id/grav"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_centerInParent="true"
-      app:colorGenerator="com.github.glomadrian.grav.generator.paint.OneColorGenerator"
-      app:grav_color="@color/colorPrimary"
-      />
-
-  <com.github.glomadrian.grav.GravView
-      android:id="@+id/grav"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:layout_centerInParent="true"
-      app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
-      app:grav_colors="@array/Spectral"
-      />
+## XML Samples
 
 
-        <com.github.glomadrian.grav.GravView
-            android:id="@+id/grav"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
-            app:grav_colors="@array/Spectral"
-            app:pointGenerator="com.github.glomadrian.grav.generator.point.CircularPointGenerator"
-            app:cell_size="400"
-            app:variance="100"
-            />
+<img src="./art/wave.gif " alt="Drawing" width="250" />
 
-              <com.github.glomadrian.grav.GravView
-                  android:id="@+id/grav"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:layout_centerInParent="true"
-                  app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
-                  app:grav_colors="@array/Spectral"
-                  app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
-                  app:cell_size="400"
-                  app:variance="200"
-                  />
-   <com.github.glomadrian.grav.GravView
-       android:id="@+id/grav"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:layout_centerInParent="true"
-       app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
-       app:grav_colors="@array/Spectral"
-       app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
-       app:cell_size="100"
-       app:variance="200"
-       app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGravGenerator"
-       app:size="3dp"
-       />
-
-      <com.github.glomadrian.grav.GravView
-          android:id="@+id/grav"
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:layout_centerInParent="true"
-          app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
-          app:grav_colors="@array/Spectral"
-          app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
-          app:cell_size="300"
-          app:variance="200"
-          app:gravGenerator="com.github.glomadrian.grav.generator.grav.RectangleGravGenerator"
-          app:width="40dp"
-          app:height="40dp"
-          />
+```java
+<com.github.glomadrian.grav.GravView
+     android:id="@+id/grav"
+     android:layout_centerInParent="true"
+     android:layout_width="400dp"
+     android:layout_height="400dp"
+     app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+     app:array_colors="@array/red"
+     app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+     app:regular_cell_size="150"
+     app:regular_variance="100"
+     app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+     app:ball_size_from_size="3dp"
+     app:ball_size_to_size="6dp"
+     app:animationGenerators="@array/path"
+     app:path_variance_from="-10dp"
+     app:path_variance_to="12dp"
+     app:path="@string/circle"
+     app:path_original_width="@integer/circle_original_width"
+     app:path_original_height="@integer/circle_original_height"
+     app:path_min_duration="5000"
+     app:path_max_duration="6000"
+     />
+```
 
 
+<img src="./art/login.gif " alt="Drawing" width="250" />
 
-            <com.github.glomadrian.grav.GravView
-                android:id="@+id/grav"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerInParent="true"
-                app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
-                app:array_colors="@array/Spectral"
-                app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
-                app:regular_cell_size="100"
-                app:regular_variance="200"
-                app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
-                app:ball_size="3dp"
-                app:animationGenerators="@array/Animations"
-                app:side_to_side_min_duration="2000"
-                app:side_to_side_max_duration="5000"
-                app:side_to_side_direction="downToUp"
-                app:shake_variance="50dp"
-                app:ball_size_from_size="3dp"
-                app:ball_size_to_size="6dp"
-                app:shake_direction="horizontal"
-                />
-                 <string-array name="Animations">
-                    <item>com.github.glomadrian.grav.generator.animation.SideToSideAnimator</item>
-                    <item>com.github.glomadrian.grav.generator.animation.ShakeAnimator</item>
-                    <item>com.github.glomadrian.grav.generator.animation.BallSizeAnimator</item>
-                  </string-array>
+```java
+<com.github.glomadrian.grav.GravView
+     android:id="@+id/grav"
+     android:layout_centerInParent="true"
+     android:layout_width="400dp"
+     android:layout_height="400dp"
+     app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+     app:array_colors="@array/red"
+     app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+     app:regular_cell_size="150"
+     app:regular_variance="100"
+     app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+     app:ball_size_from_size="3dp"
+     app:ball_size_to_size="6dp"
+     app:animationGenerators="@array/path"
+     app:path_variance_from="-10dp"
+     app:path_variance_to="12dp"
+     app:path="@string/circle"
+     app:path_original_width="@integer/circle_original_width"
+     app:path_original_height="@integer/circle_original_height"
+     app:path_min_duration="5000"
+     app:path_max_duration="6000"
+     />
+```
