@@ -1,3 +1,19 @@
+# Grav
+[![Download](https://api.bintray.com/packages/glomadrian/maven/RoadRunner/images/download.svg) ](https://bintray.com/glomadrian/maven/RoadRunner/_latestVersion)
+[![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0) [![Platform](https://img.shields.io/badge/platform-android-green.svg)](http://developer.android.com/index.html)
+
+<center>
+<img src="./art/grav.png " alt="Drawing" width="250" />
+</center>
+</br>
+<p>
+Grav is a library for android which allow you to make multiple animations based
+on points
+<p/>
+
+### Samples
+
+
   <com.github.glomadrian.grav.GravView
       android:id="@+id/grav"
       android:layout_width="match_parent"
