@@ -71,21 +71,32 @@ public class GravView extends View {
     Vector<GravAnimatorGenerator> gravAnimatorGenerators = new Vector<>();
     int arrayResourceId = attributes.getResourceId(R.styleable.GravView_animationGenerators, 0);
     if (arrayResourceId != 0) {
-      String[] animationGeneratorsString = getContext().getResources().getStringArray(arrayResourceId);
-      for (String generatorString : animationGeneratorsString) {
-        GravAnimatorGenerator gravAnimatorGenerator = generatorFactory.createAnimator(generatorString, attributeSet);
-        if (gravAnimatorGenerator != null) {
-          gravAnimatorGenerators.add(gravAnimatorGenerator);
-        }
-      }
+      obtainAnimatorsFromArray(attributeSet, generatorFactory, gravAnimatorGenerators, arrayResourceId);
     } else {
-      GravAnimatorGenerator gravAnimatorGenerator =
-      generatorFactory.createAnimator(attributes.getString(R.styleable.GravView_animationGenerator), attributeSet);
+      obtainAnimatorFromSingleAttribute(attributeSet, attributes, generatorFactory, gravAnimatorGenerators);
+    }
+    return gravAnimatorGenerators;
+  }
+
+  private void obtainAnimatorFromSingleAttribute(AttributeSet attributeSet, TypedArray attributes,
+                                                GeneratorFactory generatorFactory,
+                                                Vector<GravAnimatorGenerator> gravAnimatorGenerators) {
+    GravAnimatorGenerator gravAnimatorGenerator =
+    generatorFactory.createAnimator(attributes.getString(R.styleable.GravView_animationGenerator), attributeSet);
+    if (gravAnimatorGenerator != null) {
+      gravAnimatorGenerators.add(gravAnimatorGenerator);
+    }
+  }
+
+  private void obtainAnimatorsFromArray(AttributeSet attributeSet, GeneratorFactory generatorFactory,
+                                       Vector<GravAnimatorGenerator> gravAnimatorGenerators, int arrayResourceId) {
+    String[] animationGeneratorsString = getContext().getResources().getStringArray(arrayResourceId);
+    for (String generatorString : animationGeneratorsString) {
+      GravAnimatorGenerator gravAnimatorGenerator = generatorFactory.createAnimator(generatorString, attributeSet);
       if (gravAnimatorGenerator != null) {
         gravAnimatorGenerators.add(gravAnimatorGenerator);
       }
     }
-    return gravAnimatorGenerators;
   }
 
   private void initializeRefreshAnimator() {

@@ -16,7 +16,6 @@ public class BallGenerator implements GravGenerator {
   private float toSize = size;
   private Random random = new Random();
 
-
   @Override
   public Grav generate(PointF startPoint, Paint paint) {
     return new GravBall(startPoint, paint, (int) getSizeInRange(fromSize, toSize));
