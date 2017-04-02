@@ -81,6 +81,43 @@ height
 
 <img src="./art/percent_generator.png " alt="Drawing" width="200" />
 
+## Grav Generator
+
+Grav generator is the piece in charge of draw every point previously generated.
+To use you need to set the attribute:
+```java
+app:gravGenerator="classname"
+```
+There are two Grav Generator available
+
+
+### Ball Generator
+
+Draw a Ball
+
+The sizes of the balls can be randomized in a range using the attributes below
+
+```java
+app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+app:ball_from_size="3dp"
+app:ball_to_size="16dp"
+```
+
+<img src="./art/ball_size_range.png " alt="Drawing" width="200" />
+
+
+### RectangleGenerator
+
+Draw rectangles
+
+The size of the rectangles can be change with the attributes below:
+
+```java
+app:gravGenerator="com.github.glomadrian.grav.generator.grav.RectangleGenerator" app:rectangle_width="15dp"
+app:rectangle_height="10dp"
+```
+<img src="./art/rectangle_grav.png " alt="Drawing" width="200" />
+
 
 ## XML Samples
 
