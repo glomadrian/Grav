@@ -11,7 +11,7 @@ import com.github.glomadrian.grav.figures.Grav;
 import java.util.Random;
 
 public class BallGenerator implements GravGenerator {
-  private float size = 90;
+  private float size = 20;
   private float fromSize = size;
   private float toSize = size;
   private Random random = new Random();
