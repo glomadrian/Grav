@@ -22,6 +22,17 @@ on points
 
 # How use it
 
+The library is composed of generators, each generator take care about one thing
+composing different generators you can obtain different results.
+
+There are different kind of generators
+
+ - Point generator
+ - Grav generator
+ - Color generator
+ - Animation generator
+
+
 ## Point generator
 The point generator is the class that create the points locations that later will
 be draw using a Grav Generator.
@@ -113,10 +124,125 @@ Draw rectangles
 The size of the rectangles can be change with the attributes below:
 
 ```java
-app:gravGenerator="com.github.glomadrian.grav.generator.grav.RectangleGenerator" app:rectangle_width="15dp"
+app:gravGenerator="com.github.glomadrian.grav.generator.grav.RectangleGenerator"
+app:rectangle_width="15dp"
 app:rectangle_height="10dp"
 ```
 <img src="./art/rectangle_grav.png " alt="Drawing" width="200" />
+
+
+## Color Generator
+Color generator decide how the Grav are painted
+
+To use you need to set the attribute:
+```java
+appcolorGenerator="classname"
+```
+There are two Color Generator available
+
+### Single Color Generator
+
+Paint in one single color
+
+```java
+app:colorGenerator="com.github.glomadrian.grav.generator.paint.SingleColorGenerator"
+app:single_color="@color/colorPrimary"
+```
+### Array Color Generator
+
+Paint using array of colors
+
+```java
+app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+app:array_colors="@array/Spectral"
+```
+
+<img src="./art/ball_color.png " alt="Drawing" width="200" />
+
+
+## Animation Generator
+The animation generator takes care about the position, size and properties
+animation. The animation generator can be one or an array of animation generators
+
+### Single Animation Generator
+
+To use you need to set the attribute:
+
+```java
+app:animationGenerator="classname"
+```
+
+### Array Animation Generator
+
+To use you need to set the attribute:
+
+```java
+app:animationGenerators="@array/array_reference"
+
+<string-array name="array_reference">
+  <item>com.github.glomadrian.grav.generator.animation.PathAnimator</item>
+  <item>com.github.glomadrian.grav.generator.animation.BallSizeAnimator</item>
+</string-array>
+```
+
+### Shake animator
+
+Move the grav in a range
+
+```java
+app:animationGenerator=" com.github.glomadrian.grav.generator.animation.ShakeAnimator"
+//Min animation duration
+app:shake_min_duration="1000"
+//Max animation duration
+app:shake_max_duration="3000"
+//Direction horizontal or vertical
+app:shake_direction="horizontal"
+//The size of the movement
+app:shake_variance="15dp"
+```
+
+<img src="./art/shake_anim.gif " alt="Drawing" width="200" />
+
+### Side to side animator
+
+Move grav from one side to other
+
+```java
+app:animationGenerator="com.github.glomadrian.grav.generator.animation.SideToSideAnimator"
+//Min animation duration
+app:side_to_side_min_duration="1000"
+//Max animation duration
+app:side_to_side_max_duration="3000"
+//Direction leftToRight | rightToLeft | upToDown | downToUp
+app:side_to_side_direction="leftToRight"
+```
+
+Also you can use a interpolator for the animation
+
+```java
+side_to_side_interpolator="interpolator class"
+```
+
+<img src="./art/side_to_side.gif " alt="Drawing" width="200" />
+
+### Alpha animator
+
+Apply alpha animation to a grav
+
+```java
+app:animationGenerator="com.github.glomadrian.grav.generator.animation.AlphaAnimator"
+//Min animation duration
+app:alpha_min_duration="1000"
+//Max animation duration
+app:alpha_max_duration="3000"
+//From and to in a range (0-255)
+app:alpha_from="0"
+app:alpha_to="255"
+```
+
+### Ball size aniamtor
+
+### Path animator
 
 
 ## XML Samples
