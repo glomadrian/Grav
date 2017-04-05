@@ -399,15 +399,25 @@ The full samples can be found in the demo app source code
 
 
 ## Attributions
-* Thanks to @manolovn (Manuel vera) for [Trianglify](https://github.com/manolovn/trianglify)  i get the point generators 
+* Thanks to @manolovn (Manuel vera) for [Trianglify](https://github.com/manolovn/trianglify)  i get the point generators
 from his repository
 
 
 For Gradle
 ---------------------
 
+Add repository
+
 ```groovy
-//TODO
+repositories {
+  maven {
+    url "http://dl.bintray.com/glomadrian/maven"
+  }
+}
+```
+Add dependency
+```groovy
+compile 'com.github.glomadrian:grav:1@aar'
 ```
 
   Developed By
