@@ -256,9 +256,41 @@ app:ball_size_to_size="8dp"
 
 ### Path animator
 
+The path animator move the grav following a path
+
+#### The path (sample)
+```java
+<string name="circle">
+M527.023,71.8233 C780.213,71.8233,985.464,277.075,985.464,530.265
+C985.464,783.455,780.213,988.707,527.023,988.707
+C273.832,988.707,68.5809,783.455,68.5809,530.265
+C68.5809,277.075,273.832,71.8233,527.023,71.8233 Z
+</string>
+<integer name="circle_original_width">1062</integer>
+<integer name="circle_original_height">1062</integer>
+```
+
+#### Using path animator
+```java
+app:animationGenerator="com.github.glomadrian.grav.generator.animation.PathAnimator"
+//Variance is the random margin given to the grav
+app:path_variance_from="1dp"
+app:path_variance_to="20dp"
+//Min animation duration
+app:path_min_duration="2000"
+//Max animation duration
+app:path_max_duration="2300"
+//String that define the path
+app:path="@string/circle"
+app:path_original_width="@integer/circle_original_width"
+app:path_original_height="@integer/circle_original_height"
+```
+<img src="./art/path_animator.gif " alt="Drawing" width="200" />
+
 
 ## XML Samples
 
+The full samples can be found in the demo app source code
 
 <img src="./art/wave.gif " alt="Drawing" width="250" />
 
@@ -293,24 +325,110 @@ app:ball_size_to_size="8dp"
 ```java
 <com.github.glomadrian.grav.GravView
      android:id="@+id/grav"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
      android:layout_centerInParent="true"
-     android:layout_width="400dp"
-     android:layout_height="400dp"
      app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
-     app:array_colors="@array/red"
+     app:array_colors="@array/bubble"
      app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
-     app:regular_cell_size="150"
-     app:regular_variance="100"
+     app:regular_cell_size="300"
+     app:regular_variance="200"
      app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
-     app:ball_size_from_size="3dp"
-     app:ball_size_to_size="6dp"
-     app:animationGenerators="@array/path"
-     app:path_variance_from="-10dp"
-     app:path_variance_to="12dp"
-     app:path="@string/circle"
-     app:path_original_width="@integer/circle_original_width"
-     app:path_original_height="@integer/circle_original_height"
-     app:path_min_duration="5000"
-     app:path_max_duration="6000"
-     />
+     app:ball_from_size="10dp"
+     app:ball_to_size="20dp"
+     app:animationGenerators="@array/BubbleAnimations"
+     app:side_to_side_min_duration="10000"
+     app:side_to_side_max_duration="10000"
+     app:side_to_side_direction="leftToRight"
+     app:shake_direction="vertical"
+     app:shake_min_duration="10000"
+     app:shake_max_duration="20000"
+     app:shake_variance="500dp"
+    />
+ ```
+
+ <img src="./art/falcon.gif " alt="Drawing" width="200" />
+
+ ```java
+ <com.github.glomadrian.grav.GravView
+       android:id="@+id/grav"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       app:colorGenerator="com.github.glomadrian.grav.generator.paint.ArrayColorGenerator"
+       app:array_colors="@array/falcon"
+       app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
+       app:regular_cell_size="100"
+       app:regular_variance="200"
+       app:gravGenerator="com.github.glomadrian.grav.generator.grav.RectangleGenerator"
+       app:rectangle_width="15dp"
+       app:rectangle_height="2dp"
+       app:animationGenerators="@array/FalconAnimations"
+       app:side_to_side_min_duration="400"
+       app:side_to_side_max_duration="800"
+       app:side_to_side_direction="rightToLeft"
+       app:shake_variance="5dp"
+       app:shake_direction="vertical"
+       />
+        ```
+
+<img src="./art/robot.gif " alt="Drawing" width="200" />
+
+ ```java
+<com.github.glomadrian.grav.GravView
+    android:id="@+id/grav"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:colorGenerator="com.github.glomadrian.grav.generator.paint.OneColorGenerator"
+    app:single_color="#FFF"
+    app:pointGenerator="com.github.glomadrian.grav.generator.point.PercentPointGenerator"
+    app:ball_from_size="2dp"
+    app:ball_to_size="5dp"
+    app:animationGenerators="@array/WallaIcon"
+    app:alpha_from="100"
+    app:alpha_to="200"
+    app:alpha_min_duration="1600"
+    app:alpha_max_duration="3000"
+    app:shake_direction="vertical"
+    app:shake_variance="3dp"
+    app:shake_min_duration="1100"
+    app:shake_max_duration="3500"
+    app:percent_points_array="@array/walla_points_percent_points"
+    app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
+    />
+  ```
+
+
+## Attributions
+* Thanks to @manolovn (Manuel vera) for [Trianglify](https://github.com/manolovn/trianglify)  i get the point generators 
+from his repository
+
+
+For Gradle
+---------------------
+
+```groovy
+//TODO
 ```
+
+  Developed By
+  ------------
+  Adrián García Lomas - <glomadrian@gmail.com>
+  * [Twitter](https://twitter.com/glomadrian)
+  * [LinkedIn](https://es.linkedin.com/in/glomadrian )
+
+  License
+  -------
+
+      Copyright 2017 Adrián García Lomas
+
+      Licensed under the Apache License, Version 2.0 (the "License");
+      you may not use this file except in compliance with the License.
+      You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+      Unless required by applicable law or agreed to in writing, software
+      distributed under the License is distributed on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+      See the License for the specific language governing permissions and
+      limitations under the License.
