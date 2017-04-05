@@ -214,7 +214,7 @@ app:side_to_side_max_duration="3000"
 app:side_to_side_direction="leftToRight"
 ```
 
-Also you can use a interpolator for the animation
+Also you can use a interpolator
 
 ```java
 side_to_side_interpolator="interpolator class"
@@ -239,7 +239,8 @@ app:alpha_to="255"
 
 ### Ball size animator
 
-Animate to one size to another
+Animates the size of the ball
+
 ```java
 app:animationGenerator="com.github.glomadrian.grav.generator.animation.BallSizeAnimator"
 //Min animation duration
