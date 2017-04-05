@@ -8,7 +8,7 @@
 </center>
 <p>
 Grav is a library for android which allow you to make multiple animations based
-on points
+on points.
 <p/>
 
 <p align="center">
@@ -25,7 +25,7 @@ on points
 The library is composed of generators, each generator takes care of one thing.
 Composing different generators you can obtain different results.
 
-There are different kind of generators
+There are different kind of generators:
 
  - Point generator
  - Grav generator
@@ -43,7 +43,7 @@ The first thing you need is a Point generator, the are 3 generators available:
 
 ### Regular point generator
 
-Generate points based on a cell and a variance
+Generate points based on a cell and a variance.
 ```java
 app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGenerator"
 app:regular_cell_size="200"
@@ -55,7 +55,7 @@ app:regular_variance="20"
 
 ### Circular point generator
 
-Generate points based on a cell and a variance in a circular shape
+Generate points based on a cell and a variance in a circular shape.
 ```java
 app:pointGenerator="com.github.glomadrian.grav.generator.point.CircularPointGenerator"
 app:regular_cell_size="200"
@@ -67,12 +67,12 @@ app:regular_variance="200"
 <img src="./art/circular_generator.png" alt="Drawing" width="200" />
 
 ### Percent point generator
-Generate the points based on percent locations array
+Generate the points based on percent locations array.
 ```java
 app:pointGenerator="com.github.glomadrian.grav.generator.point.PercentPointGenerator"
 app:percent_points_array="@array/walla_points_percent_points"
 ```
-Inside arrays.xml each pair of items represents a point in the view, which is defined by a width percent and a height percent
+Inside arrays.xml each pair of items represents a point in the view, which is defined by a width percent and a height percent.
 ```java
 <integer-array name="sample_points_percent_points">
    <item>10</item>
@@ -129,17 +129,17 @@ app:rectangle_height="10dp"
 
 
 ## Color generator
-Decides how the Grav is painted
+Decides how the Grav is painted.
 
 To use you need to set the attribute:
 ```java
 appcolorGenerator="classname"
 ```
-There are two Color Generator available
+There are two Color Generator available.
 
 ### Single color generator
 
-Paint in one single color
+Paint in one single color.
 
 ```java
 app:colorGenerator="com.github.glomadrian.grav.generator.paint.SingleColorGenerator"
@@ -183,7 +183,7 @@ app:animationGenerators="@array/array_reference"
 
 ### Shake animator
 
-Moves the Grav within a range of values
+Moves the Grav within a range of values.
 
 ```java
 app:animationGenerator=" com.github.glomadrian.grav.generator.animation.ShakeAnimator"
@@ -201,7 +201,7 @@ app:shake_variance="15dp"
 
 ### Side to side animator
 
-Move grav from one side to other
+Aniamtes the translation of the Grav to a different side.
 
 ```java
 app:animationGenerator="com.github.glomadrian.grav.generator.animation.SideToSideAnimator"
@@ -213,7 +213,7 @@ app:side_to_side_max_duration="3000"
 app:side_to_side_direction="leftToRight"
 ```
 
-Also you can use a interpolator
+Also you can use a interpolator.
 
 ```java
 side_to_side_interpolator="interpolator class"
@@ -223,7 +223,7 @@ side_to_side_interpolator="interpolator class"
 
 ### Alpha animator
 
-Apply alpha animation to a grav
+Applies an alpha animation to a Grav.
 
 ```java
 app:animationGenerator="com.github.glomadrian.grav.generator.animation.AlphaAnimator"
@@ -238,7 +238,7 @@ app:alpha_to="255"
 
 ### Ball size animator
 
-Animates the size of the ball
+Animates the size of the ball.
 
 ```java
 app:animationGenerator="com.github.glomadrian.grav.generator.animation.BallSizeAnimator"
@@ -253,7 +253,7 @@ app:ball_size_to_size="8dp"
 
 ### Path animator
 
-The path animator moves the grav following a path
+The path animator moves the grav following a path.
 
 #### The path (sample)
 ```java
@@ -287,7 +287,7 @@ app:path_original_height="@integer/circle_original_height"
 
 ## XML Samples
 
-The full samples can be found in the demo app source code
+The full samples can be found in the demo app source code.
 
 <img src="./art/wave.gif " alt="Drawing" width="250" />
 
@@ -369,7 +369,6 @@ The full samples can be found in the demo app source code
 ```
 
 <img src="./art/robot.gif " alt="Drawing" width="200" />
-
 ```java
 <com.github.glomadrian.grav.GravView
     android:id="@+id/grav"
