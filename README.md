@@ -99,11 +99,11 @@ app:gravGenerator="classname"
 There are two Grav Generator available
 
 
-### Ball Generator
+### Ball generator
 
-Draw a Ball
+Draws a ball.
 
-The sizes of the balls can be randomized in a range using the attributes below
+Ball sizes can be generated randomly within a range using the following attributes:
 
 ```java
 app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
@@ -114,11 +114,11 @@ app:ball_to_size="16dp"
 <img src="./art/ball_size_range.png " alt="Drawing" width="200" />
 
 
-### RectangleGenerator
+### Rectangle generator
 
-Draw rectangles
+Draws rectangles.
 
-The size of the rectangles can be change with the attributes below:
+Size of the rectangles can be changed using the following attributes:
 
 ```java
 app:gravGenerator="com.github.glomadrian.grav.generator.grav.RectangleGenerator"
@@ -128,7 +128,7 @@ app:rectangle_height="10dp"
 <img src="./art/rectangle_grav.png " alt="Drawing" width="200" />
 
 
-## Color Generator
+## Color generator
 Color generator decide how the Grav are painted
 
 To use you need to set the attribute:
@@ -137,7 +137,7 @@ appcolorGenerator="classname"
 ```
 There are two Color Generator available
 
-### Single Color Generator
+### Single color generator
 
 Paint in one single color
 
@@ -145,7 +145,7 @@ Paint in one single color
 app:colorGenerator="com.github.glomadrian.grav.generator.paint.SingleColorGenerator"
 app:single_color="@color/colorPrimary"
 ```
-### Array Color Generator
+### Array color generator
 
 Paint using array of colors
 
@@ -157,11 +157,11 @@ app:array_colors="@array/Spectral"
 <img src="./art/ball_color.png " alt="Drawing" width="200" />
 
 
-## Animation Generator
+## Animation generator
 The animation generator takes care about the position, size and properties
 animation. The animation generator can be one or an array of animation generators
 
-### Single Animation Generator
+### Single animation generator
 
 To use you need to set the attribute:
 
@@ -169,7 +169,7 @@ To use you need to set the attribute:
 app:animationGenerator="classname"
 ```
 
-### Array Animation Generator
+### Array animation generator
 
 To use you need to set the attribute:
 
@@ -237,7 +237,7 @@ app:alpha_from="0"
 app:alpha_to="255"
 ```
 
-### Ball size animmator
+### Ball size animator
 
 Animate to one size to another
 ```java
