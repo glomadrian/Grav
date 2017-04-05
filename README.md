@@ -72,11 +72,9 @@ Generate the points based on percent locations array
 app:pointGenerator="com.github.glomadrian.grav.generator.point.PercentPointGenerator"
 app:percent_points_array="@array/walla_points_percent_points"
 ```
-inside arrays.xml
-Each pair of items represents a point in the view, defined in percent width and
-height
+Inside arrays.xml each pair of items represents a point in the view, which is defined by a width percent and a height percent
 ```java
-<integer-array name="walla_points_percent_points">
+<integer-array name="sample_points_percent_points">
    <item>10</item>
    <item>60</item>
 
