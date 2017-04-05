@@ -366,11 +366,11 @@ The full samples can be found in the demo app source code
        app:shake_variance="5dp"
        app:shake_direction="vertical"
        />
-        ```
+```
 
 <img src="./art/robot.gif " alt="Drawing" width="200" />
 
- ```java
+```java
 <com.github.glomadrian.grav.GravView
     android:id="@+id/grav"
     android:layout_width="match_parent"
@@ -392,7 +392,7 @@ The full samples can be found in the demo app source code
     app:percent_points_array="@array/walla_points_percent_points"
     app:gravGenerator="com.github.glomadrian.grav.generator.grav.BallGenerator"
     />
-  ```
+```
 
 
 ## Attributions
