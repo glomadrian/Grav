@@ -183,7 +183,7 @@ app:animationGenerators="@array/array_reference"
 
 ### Shake animator
 
-Move the grav in a range
+Moves the Grav within a range of values
 
 ```java
 app:animationGenerator=" com.github.glomadrian.grav.generator.animation.ShakeAnimator"
