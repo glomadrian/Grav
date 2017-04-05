@@ -253,7 +253,7 @@ app:ball_size_to_size="8dp"
 
 ### Path animator
 
-The path animator move the grav following a path
+The path animator moves the grav following a path
 
 #### The path (sample)
 ```java
@@ -396,8 +396,7 @@ The full samples can be found in the demo app source code
 
 
 ## Attributions
-* Thanks to [@manolovn](https://github.com/manolovn) for [Trianglify](https://github.com/manolovn/trianglify)  i get the point generators
-from his repository
+* Thanks to [@manolovn](https://github.com/manolovn) for [Trianglify](https://github.com/manolovn/trianglify) where I obtained the point generators.
 * Thanks to [@jlmd](https://github.com/jlmd) for the corrections made to this Readme
 
 
