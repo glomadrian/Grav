@@ -22,7 +22,7 @@ on points
 
 # How to use it
 
-The library is composed of generators, each generator takes care of one thing. 
+The library is composed of generators, each generator takes care of one thing.
 Composing different generators you can obtain different results.
 
 There are different kind of generators
@@ -129,7 +129,7 @@ app:rectangle_height="10dp"
 
 
 ## Color generator
-Color generator decide how the Grav are painted
+Decides how the Grav is painted
 
 To use you need to set the attribute:
 ```java
@@ -158,8 +158,7 @@ app:array_colors="@array/Spectral"
 
 
 ## Animation generator
-The animation generator takes care about the position, size and properties
-animation. The animation generator can be one or an array of animation generators
+The animation generator takes care of the position, size and properties animation. The animation generator can be one or an array of animation generators.
 
 ### Single animation generator
 
