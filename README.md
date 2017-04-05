@@ -240,7 +240,19 @@ app:alpha_from="0"
 app:alpha_to="255"
 ```
 
-### Ball size aniamtor
+### Ball size animmator
+
+Animate to one size to another
+```java
+app:animationGenerator="com.github.glomadrian.grav.generator.animation.BallSizeAnimator"
+//Min animation duration
+app:ball_size_min_duration="1000"
+//Max animation duration
+app:ball_size_max_duration="3000"
+app:ball_size_from_size="3dp"
+app:ball_size_to_size="8dp"
+```
+<img src="./art/size_to_size.gif " alt="Drawing" width="200" />
 
 ### Path animator
 
