@@ -398,6 +398,7 @@ The full samples can be found in the demo app source code
 ## Attributions
 * Thanks to @manolovn (Manuel vera) for [Trianglify](https://github.com/manolovn/trianglify)  i get the point generators
 from his repository
+* Thanks to @jlmd for the corrections made to this Readme
 
 
 For Gradle
