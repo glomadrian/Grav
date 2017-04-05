@@ -20,10 +20,10 @@ on points
 <img src="./art/robot.gif " alt="Drawing" width="200" />
 <p/>
 
-# How use it
+# How to use it
 
-The library is composed of generators, each generator take care about one thing
-composing different generators you can obtain different results.
+The library is composed of generators, each generator takes care of one thing. 
+Composing different generators you can obtain different results.
 
 There are different kind of generators
 
@@ -34,9 +34,8 @@ There are different kind of generators
 
 
 ## Point generator
-The point generator is the class that create the points locations that later will
-be draw using a Grav Generator.
-To use you need to set the attribute:
+The point generator is the class that creates the locations of the points that will be drawn using a Grav Generator.
+ In order to use it you need to set the attribute:
 ```java
 app:pointGenerator="classname"
 ```
