@@ -49,7 +49,7 @@ app:pointGenerator="com.github.glomadrian.grav.generator.point.RegularPointGener
 app:regular_cell_size="200"
 app:regular_variance="20"
 ```
-(Using in conbination with GravBallGeneartor)
+(Using in combination with GravBallGeneartor)
 
 <img src="./art/regular_generator.png " alt="Drawing" width="200" />
 
@@ -62,7 +62,7 @@ app:regular_cell_size="200"
 app:regular_variance="200"
 ```
 
-(Using in conbination with GravBallGeneartor)
+(Using in combination with GravBallGeneartor)
 
 <img src="./art/circular_generator.png" alt="Drawing" width="200" />
 
@@ -87,7 +87,7 @@ height
    <item>10</item>
  </integer-array>
 ```
-(Using in conbination with GravBallGeneartor)
+(Using in combination with GravBallGeneartor)
 
 <img src="./art/percent_generator.png " alt="Drawing" width="200" />
 
