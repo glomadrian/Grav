@@ -369,6 +369,7 @@ The full samples can be found in the demo app source code.
 ```
 
 <img src="./art/robot.gif " alt="Drawing" width="200" />
+
 ```java
 <com.github.glomadrian.grav.GravView
     android:id="@+id/grav"
