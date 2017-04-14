@@ -62,6 +62,7 @@ public class GravView extends View {
       @Override
       public void onGlobalLayout() {
         start();
+        getViewTreeObserver().removeOnGlobalLayoutListener(this);
       }
     });
   }
