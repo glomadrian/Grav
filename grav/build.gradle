@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.novoda.bintray-release'
 group = 'com.github.glomadrian' // Maven Group ID for the artifact
-version = '1'
+version = '1.1'
 
 android {
   compileSdkVersion 25
@@ -10,8 +10,8 @@ android {
   defaultConfig {
     minSdkVersion 16
     targetSdkVersion 25
-    versionCode 1
-    versionName "1.0"
+    versionCode 11
+    versionName "1.1"
 
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
@@ -25,28 +25,14 @@ android {
 def siteUrl = 'https://github.com/glomadrian/Grav'
 def gitUrl = 'https://github.com/glomadrian/Grav.git'
 
-bintray {
-  Properties properties = new Properties()
-  File propertiesFile = new File('local.properties')
-  propertiesFile.withInputStream {
-    properties.load(it)
-  }
 
-  user = properties.getProperty("bintray.user")
-  key =  properties.getProperty("bintray.key")
-
-  configurations = ['archives'] //When uploading configuration files
-  pkg {
-    repo = 'maven'
-    name = 'Grav'
-    desc = 'Configurable animations based on points'
-    websiteUrl = siteUrl
-    issueTrackerUrl = 'https://github.com/glomadrian/Grav/issues'
-    vcsUrl = gitUrl
-    licenses = ['Apache2.0']
-    labels = ['aar', 'android', 'balls', 'points', 'animation']
-    publicDownloadNumbers = true
-  }
+publish {
+  userOrg = 'glomadrian'
+  groupId = group
+  artifactId = 'Grav'
+  publishVersion = '1.1'
+  desc = 'Configurable animations based on points'
+  website = siteUrl
 }
 
 dependencies {

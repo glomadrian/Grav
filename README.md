@@ -414,7 +414,7 @@ repositories {
 ```
 Add dependency
 ```groovy
-compile 'com.github.glomadrian:grav:1@aar'
+compile 'com.github.glomadrian:Grav:1.1'
 ```
 
   Developed By
